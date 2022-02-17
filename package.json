@@ -1,0 +1,22 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "The best way to wach videos!",
+  "main": "index.js",
+  "scripts": {
+    "win": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtl1015/wetube-site.git"
+  },
+  "author": "terrypotter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtl1015/wetube-site/issues"
+  },
+  "homepage": "https://github.com/mtl1015/wetube-site#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
