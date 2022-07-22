@@ -13,6 +13,11 @@ html(lang="ko")
                         a(href="/video/upload") Upload Video    |
                     li   
                         a(href="/") Home     |
+                    if !req.session.loggedIn
+                        li   
+                            a(href="/join") Join    |
+                        li   
+                            a(href="/login") Login   |
                     li   
                         a(href="/search") Search      |
                     li 

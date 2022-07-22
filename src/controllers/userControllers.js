@@ -35,7 +35,7 @@ export const deleteUser = (req,res) => res.send("Delete User");
 export const getLogin = (req,res) => {
     return res.render("login",{pageTitle:"Login!"} )
 }
-export const postLogin = async(req,res) => {
+export const postLogin = async(req,res,next) => {
     const {password, username} = req.body;
     const user = await User.findOne({username});
     if (!user){
@@ -48,6 +48,9 @@ export const postLogin = async(req,res) => {
             errorMessage: "Wrong Passowrd"
         });
     }
+    req.session.loggedIn = true;
+    req.session.user = user;
+    return res.redirect("/");
 
 }
 export const logout = (req,res) => res.send("Logout");

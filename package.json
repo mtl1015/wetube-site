@@ -2,7 +2,7 @@
   "name": "wetube",
   "version": "1.0.0",
   "description": "The best way to wach videos!",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon --exec npx babel-node src/init.js"
   },

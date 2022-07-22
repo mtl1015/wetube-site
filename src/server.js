@@ -17,11 +17,24 @@ app.set("views", process.cwd() + "/src/views");
 app.use(logger);
 app.use(express.urlencoded({extended: true}));
 
-app.use(session({
-    secret: "Hi",
-    resave: true,
-    saveUninitialized: true
-}));
+app.use(
+    session({
+        secret: "Hi",
+        resave: true,
+        saveUninitialized: true
+    })
+);
+
+app.use((req,res,next) => {
+    req.sessionStore.all((Error, sessions) => {
+        console.log(sessions);
+        next();
+    })
+})
+
+app.get("/add", (req,res,next) => {
+    return res.send(`${req.session.id}`);
+})
 
 app.use("/",rooteRouter)
 app.use("/video", videoRouter)
